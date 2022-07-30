@@ -1,0 +1,17 @@
+$color_bg: #0a0a0a;
+
+.wrapper {
+  .main {
+    .main_wrapper {
+      background-color: $color_bg;
+      section {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+}
+
+.invisible {
+  display: none;
+}

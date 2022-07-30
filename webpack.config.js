@@ -8,17 +8,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: MODE,
   entry: {
-    bundle: path.resolve(__dirname, "src/index.js")
+    bundle: path.resolve(__dirname, "src/js/main.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    assetModuleFilename: "assets/[name][ext]",
   },
   resolve: {
-    modules: [path.resolve(__dirname, "src"), "node_modules"]
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.scss/,
         use: [
           "style-loader",
@@ -27,8 +29,8 @@ module.exports = {
             options: {
               url: false,
               sourceMap: isDev,
-              importLoaders: 2
-            }
+              importLoaders: 2,
+            },
           },
           {
             loader: "sass-loader",
@@ -47,28 +49,35 @@ module.exports = {
             options: {
               url: false,
               sourceMap: isDev,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
-        generator: {
-          filename: "./assets/[name][ext]"
-        },
-        type: 'asset/resource'
+        type: "asset/resource",
       },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
+      // {
+      //   test: /\.html$/i,
+      //   type: "asset/resource",
+      //   generator: {
+      //     filename: "static/[hash][ext][query]",
+      //   },
+      // },
     ],
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "DHUPunk | Top",
+      template: "src/index.html",
+    })
+  ],
 
   target: ["web", "es5"],
 
   devServer: {
     static: "dist",
     open: true,
-  }
-}
+  },
+};
