@@ -77,7 +77,7 @@ module.exports = {
   target: ["web", "es5"],
 
   devServer: {
-    static: "dist",
+    static: "docs",
     open: true,
   },
 };
