@@ -231,7 +231,7 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
-              background-image: url("../assets/component/frame.svg");
+              background-image: url("./assets/component/frame.svg");
               background-position: center;
               background-size: 100%;
               padding: 2rem;
@@ -251,7 +251,7 @@ body {
             height: 100%;
             .learn_more {
               .img {
-                background-image: url("../assets/component/learnmore_right.svg");
+                background-image: url("./assets/component/learnmore_right.svg");
                 transform: none;
                 transition: 0.2s ease-out;
                 &:hover {
@@ -282,7 +282,7 @@ body {
             }
             .learn_more {
               .img {
-                background-image: url("../assets/component/learnmore_left.svg");
+                background-image: url("./assets/component/learnmore_left.svg");
                 background-position: right;
                 transform: none;
                 transition: 0.2s ease-out;
