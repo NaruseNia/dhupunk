@@ -20,13 +20,7 @@ const cg_html = `
       </p>
     </div>
     <div id="lightgallery">
-        <div class="slide">
-          <img src="./assets/img/3dcg/1.jpg" alt="1">
-        </div>
-        <div class="slide">
-          <img src="./assets/img/3dcg/2.png" alt="2">
-        </div>
-      </div>
+
     </div>
   </div>
   <a class="close_overlay">Close</a>
@@ -69,10 +63,9 @@ const registerEvents = () => {
     );
   });
 
-  // Learn more
-  // document.querySelectorAll(".lm_cg").forEach((lm) => {
-  //   lm.addEventListener("click", () => cg_overlay.open());
-  // });
+  document.querySelectorAll(".lm_cg").forEach((lm) => {
+    lm.addEventListener("click", () => cg_overlay.open());
+  });
 };
 
 const cg_overlay = new OverlayContent(
