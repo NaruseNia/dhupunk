@@ -26,6 +26,7 @@
   "dependencies": {
     "barba": "^1.0.0",
     "gsap": "^3.10.4",
+    "luxy.js": "^0.1.0",
     "three": "^0.142.0"
   }
 }

@@ -11,6 +11,7 @@
     <!--#for SEO-->
     <h1 class="invisible">DHUPunk</h1>
     <!--#end SEO-->
+    <div class="knob"></div>
     <header class="header invisible">
       <nav class="header_nav">
         <div class="nav_container">
@@ -26,16 +27,25 @@
     <main class="main">
       <div class="main_wrapper">
         <section id="top">
-          <img src="./assets/logo.png" alt="DHUPunk">
+          <img id="logo" src="./assets/logo.png" alt="DHUPunk">
         </section>
-        <section id="cg"></section>
-        <section id="art"></section>
-        <section id="mv"></section>
-        <section id="video"></section>
+        <section id="cg">
+          <div id="headline_container">
+            <img src="./assets/headline/cg.svg" alt="CG" class="cg_headline headline">
+          </div>
+          <div id="main_container">
+            <div id="texts">
+            </div>
+            <div id="preview"></div>
+          </div>
+        </section>
+        <section id="art"><h1>Art</h1>></section>
+        <section id="mv"><h1>MV</h1></section>
+        <section id="video"><h1>Video</h1></section>
       </div>
     </main>
     <footer class="footer"></footer>
   </div>
-  <script src="./bundle.js"></script>
+  <script type="module" src="./bundle.js" defer></script>
 </body>
 </html>
