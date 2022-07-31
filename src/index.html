@@ -5,11 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <title>DHUPunk | Top</title>
 </head>
 
 <body>
-  <div class="loader"></div>
+  <div class="loader invisible">
+    <div class="loader_container">
+      <div class="glitch_container">
+        <img id="logo" src="./assets/logo.png" alt="DHUPunk">
+      </div>
+      <p>LOADING...</p>
+    </div>
+  </div>
+  <div class="overlay_contents">
+  </div>
   <div class="wrapper" id="luxy">
     <!--#for SEO-->
     <h1 class="invisible">DHUPunk</h1>
@@ -25,17 +38,20 @@
           <div class="nav_container">
             <ul class="nav_list">
               <li><a href="#cg">
-                3DCG
-              </a></li>
+                  3DCG
+                </a></li>
               <li><a href="#art">
-                Art
-              </a>
+                  ART
+                </a>
               <li><a href="#mv">
-                MV
-              </a></li>
+                  MV
+                </a></li>
               <li><a href="#video">
-                Video
-              </a></li>
+                  VIDEO
+                </a></li>
+              <li><a href="#link">
+                  LINK
+                </a></li>
               <li>
                 <img class="up_arrow close_header" src="./assets/component/up_arrow.svg" alt="↓">
               </li>
@@ -60,20 +76,25 @@
               <div class="texts_container">
                 <img src="./assets/headline/about_us.svg" alt="ABOUT US" class="text_aboutus">
                 <p class="description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste tempora impedit, ratione atque mollitia
-                  sit sint, ipsum voluptate quisquam ullam aliquid voluptatem quis adipisci corrupti maxime facilis
-                  dolorem culpa explicabo?
+                  We made a cyberpunk short animation using the CG software maya and blender.
+                  It was the first time for all of us to use Maya, and none of us had any 3DCG experience.
+                  However, if we didn't know something, we looked it up again and again and tried various methods to
+                  make it through a trial-and-error process.
+                  Also, we had to make their own CG models of each items and then place them in the same scene. It was
+                  so difficult to harmonize them because the colors, styles ware so different without matching.
+                  But all those hard experiences became a great 3DCG lesson for us.
+                  We hope you enjoy the cyberpunk world we created .
                 </p>
-                <a href="#" aria-label="goto CG Page" class="learn_more">
+                <div class="learn_more lm_cg pointer">
                   <div class="img"></div>
-                </a>
+                </div>
               </div>
             </div>
             <div class="preview">
               <div class="frame">
-                <a href="#">
+                <div class="pointer lm_cg">
                   <img class="frame_image" src="./assets/img/cg_preview.png" alt="Frame">
-                </a>
+                </div>
                 <div class="image_container">
                 </div>
               </div>
@@ -96,9 +117,9 @@
                   this will inspire
                   others to create with confidence and pride.
                 </p>
-                <a href="#" aria-label="goto CG Page" class="learn_more">
+                <div class="learn_more">
                   <div class="img"></div>
-                </a>
+                </div>
               </div>
             </div>
             <div class="preview">
@@ -128,9 +149,9 @@
                   That’s what we would like to express.
                   Please enjoy it.
                 </p>
-                <a href="#" aria-label="goto CG Page" class="learn_more">
+                <div class="learn_more">
                   <div class="img"></div>
-                </a>
+                </div>
               </div>
             </div>
             <div class="preview">
@@ -153,9 +174,8 @@
               <div class="texts_container">
                 <img src="./assets/headline/about_us.svg" alt="ABOUT US" class="text_aboutus">
                 <p class="description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste tempora impedit, ratione atque
-                  mollitia sit sint, ipsum voluptate quisquam ullam aliquid voluptatem quis adipisci corrupti maxime
-                  facilis dolorem culpa explicabo?
+                  We are the video team! We made a behind-the-scenes video. We were not having too much experience about
+                  this, but we did our best on this! We hope you can see how our group worked this all out!
                 </p>
                 <a href="#" aria-label="goto CG Page" class="learn_more">
                   <div class="img"></div>
@@ -165,7 +185,7 @@
             <div class="preview">
               <div class="frame">
                 <a href="#">
-                  <img class="frame_image" src="./assets/img/video_preview.png" alt="Frame">
+                  <img class="frame_image imageload_ref" src="./assets/img/video_preview.png" alt="Frame">
                 </a>
                 <div class="image_container">
                 </div>
@@ -175,13 +195,26 @@
         </section>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="link">
       <div class="footer_container">
         <div class="right">
-
+          <ul class="list">
+            <li><a href="#cg">3DCG</a></li>
+            <li><a href="#art">ART</a></li>
+            <li><a href="#mv">MV</a></li>
+            <li><a href="#video">VIDEO</a></li>
+          </ul>
+        </div>
+        <div class="center">
+          <div class="glitch_container">
+            <img id="logo" src="./assets/logo.png" alt="DHUPunk">
+          </div>
         </div>
         <div class="left">
-
+          <ul class="list">
+            <li><a href="#">MEMBER LIST</a></li>
+            <li><a href="#">ABOUT US</a></li>
+          </ul>
         </div>
       </div>
     </footer>

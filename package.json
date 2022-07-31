@@ -24,9 +24,12 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.5.2",
     "barba": "^1.0.0",
     "gsap": "^3.10.4",
+    "lightgallery": "^2.5.0",
     "luxy.js": "^0.1.0",
+    "swiper": "^8.3.2",
     "three": "^0.142.0"
   }
 }

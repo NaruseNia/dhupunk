@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 
 $color_bg: #0a0a0a;
 $color_primary: #00ff9f;
@@ -9,7 +9,7 @@ html {
 
 body {
   overflow: overlay;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -25,6 +25,77 @@ body {
   border-radius: 2.5px;
 }
 
+.loader {
+  position: fixed;
+  background-color: $color_bg;
+  z-index: 1000;
+  .loader_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    width: 100vw;
+    height: 100vh;
+    #logo {
+      width: 35rem;
+    }
+  }
+}
+
+.overlay_contents {
+  background-color: #0a0a0a88;
+  position: fixed;
+  z-index: 500;
+  .overlay_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .top_section {
+      width: 100vw;
+      height: 85%;
+      display: flex;
+      .texts {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 8%;
+        color: #fff;
+        .title {
+          font-size: 10rem;
+          margin-bottom: 2rem;
+          color: $color_primary;
+        }
+        .description {
+          font-size: 2rem;
+        }
+      }
+      .carousel_container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        .carousel {
+          width: 50%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .close_overlay {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}
+
 .wrapper {
   .knob {
     cursor: pointer;
@@ -37,7 +108,7 @@ body {
       top: 0px;
     }
     .image_container {
-      display: block  ;
+      display: block;
       img {
         width: 10rem;
       }
@@ -95,8 +166,8 @@ body {
     max-width: 100vw;
     overflow: hidden;
     will-change: transform;
+    background-color: $color_bg;
     .main_wrapper {
-      background-color: $color_bg;
       section {
         width: 100vw;
         height: 100vh;
@@ -142,7 +213,8 @@ body {
               .learn_more {
                 .img {
                   width: 10rem;
-                  height: 2vh;
+                  height: 3rem;
+                  cursor: pointer;
                 }
               }
             }
@@ -159,7 +231,7 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
-              // background-image: url("../assets/component/frame.svg");
+              background-image: url("../assets/component/frame.svg");
               background-position: center;
               background-size: 100%;
               padding: 2rem;
@@ -180,6 +252,11 @@ body {
             .learn_more {
               .img {
                 background-image: url("../assets/component/learnmore_right.svg");
+                transform: none;
+                transition: 0.2s ease-out;
+                &:hover {
+                  transform: translateX(10px);
+                }
               }
             }
           }
@@ -207,6 +284,11 @@ body {
               .img {
                 background-image: url("../assets/component/learnmore_left.svg");
                 background-position: right;
+                transform: none;
+                transition: 0.2s ease-out;
+                &:hover {
+                  transform: translateX(-10px);
+                }
               }
             }
           }
@@ -219,30 +301,82 @@ body {
         align-items: center;
         background-image: url("../assets/gif/background_image_dark.gif");
         background-size: cover;
-        .glitch_container {
-          animation: glitch 1s linear infinite;
-          &::before,
-          &::after {
-            content: attr(title);
-            position: absolute;
-            left: 0;
-          }
-          &::before {
-            animation: glitchTop 1s linear infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-          }
-        }
         #logo {
           width: 35rem;
         }
       }
     }
   }
+
+  .footer {
+    background-color: $color_bg;
+    .footer_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      .right {
+        display: flex;
+        align-items: center;
+        width: 30rem;
+        height: 100%;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40rem;
+        #logo {
+        }
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        width: 30rem;
+        height: 100%;
+        text-align: right;
+      }
+      .list {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: $color_primary;
+          font-size: 5rem;
+          &:hover {
+            color: #fff;
+          }
+        }
+        li,
+        li + li {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .invisible {
   display: none;
+}
+
+.glitch_container {
+  animation: glitch 1s linear infinite;
+  &::before,
+  &::after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  &::before {
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
 }
 
 //<--Animation-->
