@@ -2,4 +2,4 @@
 
 This is 3DCG website.
 
-![alt]("./assets/img/3dcg/2.png")
+![https://i.imgur.com/6Wdbyv1.png]("https://i.imgur.com/6Wdbyv1.png")
