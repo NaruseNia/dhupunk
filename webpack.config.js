@@ -1,4 +1,4 @@
-const MODE = "development";
+const MODE = "production";
 
 const isDev = MODE == "development";
 
